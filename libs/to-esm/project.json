@@ -1,0 +1,34 @@
+{
+  "root": "libs/to-esm",
+  "sourceRoot": "libs/to-esm/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/to-esm/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/to-esm"],
+      "options": {
+        "jestConfig": "libs/to-esm/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/to-esm",
+        "tsConfig": "libs/to-esm/tsconfig.lib.json",
+        "packageJson": "libs/to-esm/package.json",
+        "main": "libs/to-esm/src/index.ts",
+        "assets": ["libs/to-esm/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
