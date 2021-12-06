@@ -1,0 +1,34 @@
+{
+  "root": "libs/fully-esm",
+  "sourceRoot": "libs/fully-esm/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/fully-esm/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/fully-esm"],
+      "options": {
+        "jestConfig": "libs/fully-esm/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/fully-esm",
+        "tsConfig": "libs/fully-esm/tsconfig.lib.json",
+        "packageJson": "libs/fully-esm/package.json",
+        "main": "libs/fully-esm/src/index.ts",
+        "assets": ["libs/fully-esm/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

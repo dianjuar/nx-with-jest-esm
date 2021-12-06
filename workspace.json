@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "fully-esm": "libs/fully-esm",
     "to-esm": "libs/to-esm"
   }
 }
