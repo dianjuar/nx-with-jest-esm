@@ -5,6 +5,7 @@
     "module": "es2020",
     "types": ["jest", "node"]
   },
+  "esModuleInterop": true,
   "include": [
     "**/*.test.ts",
     "**/*.spec.ts",
